@@ -1,0 +1,15 @@
+{
+  "name": "korabot-desktop",
+  "version": "1.0.0",
+  "description": "Kora Desktop Client - Multi-session chat interface",
+  "main": "src/bun/index.ts",
+  "scripts": {
+    "start": "electrobun dev --watch",
+    "build": "electrobun build"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.4",
+    "electrobun": "latest",
+    "marked": "^15.0.7"
+  }
+}

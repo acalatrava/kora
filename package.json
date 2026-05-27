@@ -1,0 +1,81 @@
+{
+  "name": "korabot",
+  "version": "0.1.0",
+  "description": "Local-first multi-channel AI Agent runtime",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "kora": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc && rm -rf dist/web_admin/public dist/web_portal/public && cp -r src/web_admin/public dist/web_admin/public && mkdir -p dist/web_portal && cp -r src/web_portal/public dist/web_portal/public && chmod +x dist/cli/index.js",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "setup": "tsx src/cli/index.ts setup",
+    "lint": "eslint src/",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "telegram",
+    "local-first",
+    "llm"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@huggingface/transformers": "^3.8.1",
+    "@simplewebauthn/server": "^13.3.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/imap": "^0.8.43",
+    "@types/mailparser": "^3.4.6",
+    "@types/node": "^25.3.5",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^7.0.11",
+    "@types/qrcode": "^1.5.6",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.18.1",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "croner": "^10.0.1",
+    "eventemitter3": "^5.0.4",
+    "googleapis": "^171.4.0",
+    "gray-matter": "^4.0.3",
+    "imap": "^0.8.19",
+    "ink": "^6.8.0",
+    "ink-select-input": "^6.2.0",
+    "ink-spinner": "^5.0.0",
+    "ink-text-input": "^6.0.0",
+    "mailparser": "^3.9.3",
+    "mammoth": "^1.12.0",
+    "marked": "^17.0.4",
+    "mqtt": "^5.15.0",
+    "node-cron": "^4.2.1",
+    "nodejs-whisper": "^0.2.9",
+    "nodemailer": "^8.0.1",
+    "openai": "^6.27.0",
+    "ora": "^9.3.0",
+    "otpauth": "^9.5.0",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.58.2",
+    "qrcode": "^1.5.4",
+    "stripe": "^20.4.1",
+    "telegraf": "^4.16.3",
+    "tesseract.js": "^7.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "uuid": "^13.0.0",
+    "ws": "^8.19.0",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "vitest": "^4.0.18"
+  }
+}

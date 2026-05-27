@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kora</title>
+  <link rel="stylesheet" href="views://mainview/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div id="login-screen" class="screen active">
+      <div class="login-container">
+        <div class="login-logo">
+          <div class="logo-icon">A</div>
+          <h1>Kora</h1>
+          <p>Connect to your AI assistant</p>
+        </div>
+        <div class="form-group">
+          <label for="server-url">Server URL</label>
+          <input type="url" id="server-url" placeholder="http://localhost:3100" value="http://localhost:3100">
+        </div>
+        <button class="btn-primary" id="login-btn" style="width:100%">Login with Browser</button>
+        <div id="login-error" class="error-msg" style="display:none"></div>
+        <div id="login-waiting" style="display:none;text-align:center;margin-top:16px;">
+          <div class="working-spinner" style="display:inline-block;margin-right:8px;vertical-align:middle;"></div>
+          <span style="color:var(--text-muted);font-size:13px">Waiting for login in browser...</span>
+          <div style="margin-top:12px"><a href="#" id="login-cancel" class="link-muted">Cancel</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chat-screen" class="screen">
+      <div class="sidebar">
+        <div class="sidebar-header" style="-webkit-app-region: drag">
+          <span class="app-title">Kora</span>
+          <button id="new-session-btn" class="icon-btn" title="New chat" style="-webkit-app-region: no-drag">+</button>
+        </div>
+        <div id="session-list" class="session-list"></div>
+        <div class="sidebar-footer">
+          <div class="footer-col">
+            <div id="user-info" class="user-info"></div>
+            <div class="conn-status"><span id="connection-dot" class="conn-dot disconnected"></span><span
+                id="connection-label" class="conn-label">Disconnected</span></div>
+          </div>
+          <button id="logout-btn" class="icon-btn" title="Disconnect">⏻</button>
+        </div>
+      </div>
+      <div class="chat-area">
+        <div id="chat-header" class="chat-header" style="-webkit-app-region: drag">
+          <span id="chat-title">Select a conversation</span>
+          <button id="delete-session-btn" class="icon-btn danger" title="Delete chat"
+            style="-webkit-app-region: no-drag; display:none">🗑</button>
+        </div>
+        <div id="messages" class="messages">
+          <div class="empty-state">
+            <div class="empty-icon">💬</div>
+            <p>Start a new conversation or select one from the sidebar</p>
+          </div>
+        </div>
+        <div id="chat-input-area" class="chat-input-area" style="display:none">
+          <div class="input-wrapper">
+            <textarea id="message-input" placeholder="Type your message..." rows="1"></textarea>
+            <button id="send-btn" class="send-btn" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="views://mainview/index.js"></script>
+</body>
+
+</html>

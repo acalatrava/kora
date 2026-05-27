@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+*.db
+*.db-journal
+.DS_Store
+*.tgz
+build/
+eng.traineddata
